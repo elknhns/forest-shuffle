@@ -1,0 +1,14 @@
+services:
+  database:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: forest_shuffle
+      POSTGRES_USER: forest_shuffle
+      POSTGRES_PASSWORD: forest_shuffle
+    ports:
+      - "5432:5432"
+    volumes:
+      - forest-shuffle-postgres:/var/lib/postgresql/data
+
+volumes:
+  forest-shuffle-postgres:
